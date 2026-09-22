@@ -4,11 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy - Kanasin WHOOP ChatGPT</title>
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 800px; margin: 48px auto; padding: 0 20px; line-height: 1.65; color: #222; }
-    h1, h2 { line-height: 1.25; }
-    .muted { color: #666; }
-  </style>
+  <link rel="stylesheet" href="privacy.css">
 </head>
 <body>
   <h1>Privacy Policy</h1>
@@ -23,13 +19,15 @@
   <p>WHOOP data is used only to retrieve, display, summarize, and analyze the authorized user's personal fitness and wellness information in response to their requests.</p>
 
   <h2>Data Sharing and Sale</h2>
-  <p>This application does not sell personal information. It does not intentionally share WHOOP data with third parties except for services necessary to operate the integration and process requests initiated by the authorized user.</p>
+  <p>This application does not sell personal information. The hosting provider processes data needed to run the application. When you explicitly enable AI chat, the selected WHOOP measurements, dates, and your chat messages are sent to OpenAI to generate a response. Profile names, email addresses, and WHOOP identifiers are removed from the measurement snapshot before it is sent. Information you type into chat is sent as written.</p>
+  <p>The application requests <code>store: false</code> from the OpenAI Responses API. This does not guarantee zero retention: provider abuse-monitoring and other applicable retention policies still apply. See <a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI data controls</a>. Viewing your dashboard or raw WHOOP data does not send it to OpenAI.</p>
 
   <h2>Data Storage and Security</h2>
-  <p>OAuth credentials and tokens should be stored securely and used only to access the authorized user's WHOOP account. The integration is intended for personal use. Reasonable measures are used to protect credentials and authorized data.</p>
+  <p>OAuth access and refresh tokens are encrypted at rest on the application server. The server also stores the WHOOP user ID, hashed session identifiers, CSRF values, and short-lived hashed OAuth state. The encryption key and API credentials are kept in server environment settings, separate from the database and source code. Login sessions expire after seven days and OAuth attempts after ten minutes. Tokens remain until you disconnect, delete them, or the authorization becomes invalid.</p>
+  <p>WHOOP health records and chat history are processed in memory and are not written to the application's database or request logs. Chat history is kept in the current browser page only and is cleared on refresh or using the clear-chat button. The operator is responsible for protecting hosting infrastructure, disabling sensitive proxy logs, and managing backup retention. Deleted records may remain in backups until those backups expire.</p>
 
   <h2>User Control</h2>
-  <p>The user may revoke the application's access to their WHOOP account at any time through the applicable WHOOP account or authorization settings. Stored credentials associated with the integration may also be deleted by the account owner.</p>
+  <p>Disconnect in the application to revoke WHOOP access and delete all locally stored tokens and sessions for your account. Logging out deletes only the current browser session. If WHOOP is unavailable, the local-delete option removes stored credentials and sessions; you should then revoke access in WHOOP settings yourself. You can also revoke access directly in WHOOP settings at any time. Clearing a conversation does not delete any copies held by service providers under their policies.</p>
 
   <h2>Contact</h2>
   <p>For privacy questions regarding this personal integration, contact the application owner using the contact information provided in the WHOOP Developer application configuration.</p>
