@@ -1,0 +1,12 @@
+{
+  "name": "whoop-chatgpt",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.0.0 <25" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "test": "node --test",
+    "check": "node --check src/server.js && node --check public/app.js"
+  }
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WHOOP · Personal insights</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="/">WHOOP <span>/ PERSONAL INSIGHTS</span></a><span class="private">บัญชีส่วนตัว</span></header>
+  <main>
+    <section class="intro"><div class="eyebrow">YOUR BODY. YOUR DATA.</div><h1>เข้าใจร่างกาย<br><span>จากข้อมูลของคุณ</span></h1><p>ดูการฟื้นตัว การนอน และการออกกำลังกาย<br>แล้วถามสิ่งที่อยากรู้กับ AI</p></section>
+    <p id="notice" role="status" aria-live="polite"></p>
+    <section id="signed-out" class="panel" hidden><h2>เริ่มต้นด้วย WHOOP</h2><p>เชื่อมบัญชีเพื่อดูข้อมูลส่วนตัวของคุณ และเลือกข้อมูลที่จะใช้ในแชต</p><a class="button" href="/auth/whoop">เชื่อมต่อ WHOOP <span>↗</span></a><p class="small">อ่านข้อมูลเท่านั้น • คุณยกเลิกการเชื่อมต่อได้ทุกเมื่อ</p></section>
+    <div id="workspace" hidden>
+      <section class="panel controls"><div><div class="eyebrow">CONNECTED</div><h2>ภาพรวมของคุณ</h2></div><label>ช่วงเวลา<select id="days"><option value="7">7 วันที่ผ่านมา</option><option value="14">14 วันที่ผ่านมา</option><option value="30">30 วันที่ผ่านมา</option></select></label><button id="refresh" class="secondary">อัปเดตข้อมูล</button></section>
+      <section class="metrics" aria-label="ข้อมูลล่าสุด"><article><span>RECOVERY</span><strong id="recovery">—</strong><small id="recovery-date">ยังไม่มีข้อมูล</small></article><article><span>SLEEP PERFORMANCE</span><strong id="sleep">—</strong><small id="sleep-date">ยังไม่มีข้อมูล</small></article><article><span>CYCLE STRAIN</span><strong id="cycles">—</strong><small id="cycles-date">ยังไม่มีข้อมูล</small></article></section>
+      <section class="panel chat"><div class="eyebrow">ASK YOUR DATA</div><h2>วันนี้อยากรู้อะไร?</h2><p class="small">AI ใช้ข้อมูลเฉพาะช่วงที่เลือก คำตอบเป็นข้อมูลเพื่อสุขภาวะทั่วไป ไม่ใช่การวินิจฉัย</p>
+        <fieldset id="resources"><legend>ข้อมูลที่ให้ AI อ่าน</legend><label><input type="checkbox" value="recovery" checked> การฟื้นตัว</label><label><input type="checkbox" value="sleep" checked> การนอน</label><label><input type="checkbox" value="cycles" checked> Strain</label><label><input type="checkbox" value="workouts" checked> ออกกำลังกาย</label><label><input type="checkbox" value="body"> สัดส่วนร่างกาย</label></fieldset>
+        <label class="consent"><input type="checkbox" id="consent"> ฉันยินยอมส่งข้อมูลที่เลือกและข้อความแชตให้ OpenAI เพื่อสร้างคำตอบ <a href="/privacy">นโยบายความเป็นส่วนตัว</a></label>
+        <div id="messages" role="log" aria-live="polite"><p class="placeholder">ลองถาม “การนอนกับ recovery ในสัปดาห์นี้เป็นอย่างไร?”</p></div>
+        <form id="chat-form"><label class="sr-only" for="question">คำถามเกี่ยวกับข้อมูล WHOOP</label><textarea id="question" rows="2" maxlength="2000" placeholder="ถามเกี่ยวกับข้อมูล WHOOP ของคุณ…" required></textarea><button id="send" type="submit">ส่งคำถาม ↗</button></form>
+        <button id="clear" class="text-button">ล้างบทสนทนา</button>
+      </section>
+      <section class="panel"><details><summary>สำรวจข้อมูล WHOOP</summary><div class="explorer"><label>ประเภทข้อมูล<select id="resource"><option value="recovery">Recovery</option><option value="cycles">Cycles</option><option value="sleep">Sleep</option><option value="workouts">Workouts</option><option value="profile">Profile</option><option value="body">Body measurements</option></select></label><button id="load-data" class="secondary">ดูข้อมูล</button></div><pre id="raw-data">เลือกประเภทข้อมูลเพื่อแสดงผล</pre></details></section>
+      <div class="account"><button id="logout" class="text-button">ออกจากระบบ</button><button id="disconnect" class="text-button">ยกเลิกการเชื่อมต่อและลบข้อมูล</button><button id="forget" class="text-button">ลบข้อมูลในแอปเท่านั้น</button></div>
+    </div>
+  </main><footer>Personal WHOOP integration · <a href="/privacy">Privacy policy</a><span>ข้อมูลสุขภาพของคุณอยู่ในการควบคุมของคุณ</span></footer>
+</body></html>

@@ -1,0 +1,9 @@
+**
+!Dockerfile
+!package.json
+!index.html
+!privacy.css
+!src/
+!src/**
+!public/
+!public/**

@@ -1,0 +1,4 @@
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 800px; margin: 48px auto; padding: 0 20px; line-height: 1.65; color: #222; background: #fff; }
+h1, h2 { line-height: 1.25; }
+.muted { color: #666; }
+a { color: #185d3b; }

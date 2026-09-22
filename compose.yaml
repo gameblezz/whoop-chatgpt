@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      PORT: 3000
+      DATABASE_PATH: /app/data/whoop.sqlite
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - whoop-data:/app/data
+    stop_grace_period: 15s
+volumes:
+  whoop-data:
